@@ -7,7 +7,7 @@
 - MaxMachineBit 最大的机器标识bit位数，默认是8，取值范围1-255，如果为0会忽略机器标识这一段
 - MaxSequenceBit 每毫秒内的流水号bit位数，默认是12，取值范围是0-4095
 
-···go
+```go
 package main
 
 import (
