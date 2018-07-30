@@ -1,6 +1,11 @@
 # snowflake
 ====
 
+## 安装
+```sh
+go get github.com/anerg2046/snowflake
+```
+
 ## 用法
 默认有3个参数可以进行设置
 - Epoch 设置一个小于当前时间的毫秒数，用于缩短时间位数
