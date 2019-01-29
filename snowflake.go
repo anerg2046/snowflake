@@ -62,6 +62,19 @@ func (n *Node) NextID() ID {
 	return nextID
 }
 
+func (n *Node) ParseID(id int64) map[string]interface{} {
+	timeLeftShift := MaxSequenceBit
+	if n.machineID > 0 {
+		timeLeftShift += MaxMachineBit
+	}
+	timeDiff := id >> timeLeftShift
+	idTime := timeDiff + Epoch
+	rsp := make(map[string]interface{})
+	rsp["timestamp"] = idTime
+	rsp["machineID"] = n.machineID
+	return rsp
+}
+
 func (i ID) Int64() int64 {
 	return int64(i)
 }
